@@ -51,7 +51,7 @@ O **Catálogo de Jogos** é um sistema simples baseado em HTML, JavaScript e arq
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/catalogo-de-jogos.git
+   git clone https://github.com/Ratimoi/catalogo-de-jogos.git
    cd catalogo-de-jogos
    ```
 

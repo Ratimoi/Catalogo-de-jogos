@@ -3,7 +3,7 @@
 
 *Empowering Discoveries, Simplifying Game Exploration*
 
-![Last Commit](https://img.shields.io/github/last-commit/usuario/catalogo-de-jogos?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/Ratimoi/catalogo-de-jogos?style=flat-square)
 ![JavaScript](https://img.shields.io/badge/javascript-79.9%25-yellow?style=flat-square&logo=javascript)
 ![Languages](https://img.shields.io/badge/languages-2-informational?style=flat-square)
 

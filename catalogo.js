@@ -16,11 +16,11 @@ function incluir() {
     console.log("\nIncluir item no catálogo")
     console.log("-".repeat(24))
 
-    const a =        prompt("Nome: ")
-    const b = Number(prompt("Preço (R$): "))
-    const c =        prompt("Genêro: ")
-    const d =        prompt("Data de lançamento: ")
-    const e =        prompt("Produtora: ")
+    const a = String(prompt("Nome: "))
+    const b = String(prompt("Preço (R$): "))
+    const c = String(prompt("Genêro: "))
+    const d = String(prompt("Data de lançamento: "))
+    const e = String(prompt("Produtora: "))
 
     nome.push(a)
     preco.push(b)
@@ -31,12 +31,12 @@ function incluir() {
     console.log("\nItem cadastrado com sucesso\n")
 
     do {
-        let continuar = prompt("Deseja continuar (S/N)? ")
+        let continuar = prompt("Deseja incluir outro (S/N)? ")
 
         if (continuar.toUpperCase() == "N") {
             break
         } else if (continuar.toUpperCase() == "S") {
-            return incluir
+            return incluir()
         } else {
             console.log("\nValor ínvalido, insira novamente\n")
         }
@@ -51,7 +51,7 @@ function listar() {
     console.log("Nº..: Nome...................: Preço....: Genêro.........: Lançamento..: Produtora..........:")
 
     for (let i = 0; i < nome.length; i++) {
-        console.log(`${String((i + 1)).padEnd(5)} ${nome[i].padEnd(24)} R$${String(preco[i]).padEnd(8)} ${genero[i].padEnd(16)} ${data[i].padEnd(13)} ${produtora[i]}`)
+        console.log(`${String(i + 1).padEnd(5)} ${String(nome[i]).padEnd(24)} R$${String(preco[i]).padEnd(8)} ${String(genero[i]).padEnd(16)} ${String(data[i]).padEnd(13)} ${String(produtora[i])}`)
     }
     console.log("-".repeat(93))
 }
@@ -67,7 +67,7 @@ function pesquisar() {
     
     for (let i = 0; i < nome.length; i++) {
         if (nome[i].includes(pesquisa) || String(preco[i]).includes(pesquisa) || genero[i].includes(pesquisa) || data[i].includes(pesquisa) || produtora[i].includes(pesquisa)) {
-            console.log(`${nome[i].padEnd(24)} R$${String(preco[i]).padEnd(8)} ${genero[i].padEnd(16)} ${data[i].padEnd(13)} ${produtora[i]}`)
+            console.log(`${nome[i].padEnd(24)} R$${String(preco[i]).padEnd(8)} ${String(genero[i]).padEnd(16)} ${data[i].padEnd(13)} ${produtora[i]}`)
         }
     }
     console.log("-".repeat(87))
@@ -95,8 +95,8 @@ function pesquisaIntervalo() {
     console.log("\nNome...................: Preço....: Genêro.........: Lançamento..: Produtora..........:")
 
     for (let i = 0; i < nome.length; i++) {
-        if (preco[i] >= menor && preco[i] <= maior) {
-            console.log(`${nome[i].padEnd(24)} R$${String(preco[i]).padEnd(8)} ${genero[i].padEnd(16)} ${data[i].padEnd(13)} ${produtora[i]}`)
+        if (Number(preco[i]) >= menor && Number(preco[i]) <= maior) {
+            console.log(`${String(nome[i]).padEnd(24)} R$${String(preco[i]).padEnd(8)} ${String(genero[i]).padEnd(16)} ${String(data[i]).padEnd(13)} ${String(produtora[i])}`)
         }
     }
     console.log("-".repeat(87))
@@ -401,11 +401,11 @@ function obtemProdutos() {
         for (let i = 0; i < produtos.length; i++) {
             const partes = produtos[i].split(";")
 
-            nome.push(partes[0])
-            preco.push(Number(partes[1]))
-            genero.push(partes[2])
-            data.push(partes[3])
-            produtora.push(partes[4])
+            nome.push(String(partes[0]))
+            preco.push(String(partes[1]))
+            genero.push(String(partes[2]))
+            data.push(String(partes[3]))
+            produtora.push(String(partes[4]))
         }
     }
 }
